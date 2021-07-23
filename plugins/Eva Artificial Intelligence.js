@@ -127,7 +127,7 @@ Asena.addCommand({on: 'text', fromMe: wk, dontAddCommandList: true, deleteComman
         })
     }
 }));
-Asena.addCommand({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
+Asena.addCommand({on: 'text', fromMe: true, deleteCommand: false}, (async (message, match) => {
         if (conf.FULLEVA == 'true' && ((!message.jid.includes('-')) || (message.jid.includes('-') && 
             (( message.mention !== false && message.mention.length !== 0 ) || message.reply_message !== false)))) {
             if (message.jid.includes('-') && (message.mention !== false && message.mention.length !== 0)) {
