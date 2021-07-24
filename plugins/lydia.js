@@ -16,7 +16,7 @@ const {LydiaAI} = require('coffeehouse');
 const Language = require('../language');
 const Lang = Language.getString('lydia');
 
-Asena.addCommand({pattern: 'addlydia$', fromMe: true, desc: Lang.ADDLYDIA_DESC}, (async (message, match) => {
+Asena.addCommand({pattern: 'addlydia$', fromMe: false, desc: Lang.ADDLYDIA_DESC}, (async (message, match) => {
     if (!message.reply_message) return await message.reply(Lang.NEED_REPLY);
     if (Config.COFFEEHOUSE_API_KEY == 'true') return await message.client.sendMessage(message.jid, '```You Must Set an API KEY!```\nhttps://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki/LYDIA-API-KEY', MessageType.text);
 
@@ -40,7 +40,7 @@ Asena.addCommand({pattern: 'addlydia$', fromMe: true, desc: Lang.ADDLYDIA_DESC},
     return await message.reply(Lang.ENABLED_LYDIA);
 }));
 
-Asena.addCommand({pattern: 'rmlydia$', fromMe: true, desc: Lang.RMLYDIA_DESC}, (async (message, match) => {
+Asena.addCommand({pattern: 'rmlydia$', fromMe: false, desc: Lang.RMLYDIA_DESC}, (async (message, match) => {
     if (!message.reply_message) return await message.reply(Lang.NEED_REPLY);
     if (Config.COFFEEHOUSE_API_KEY == 'true') return await message.client.sendMessage(message.jid, '```You Must Set an API KEY!```\nhttps://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki/LYDIA-API-KEY', MessageType.text);
 
